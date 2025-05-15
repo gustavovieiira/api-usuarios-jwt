@@ -1,0 +1,56 @@
+Exemplos de Requisição (Postman)
+
+1. Registro de Usuário
+POST http://localhost:3000/users/register
+Body (JSON):
+
+json
+
+{
+  "name": "João",
+  "email": "joao@email.com",
+  "password": "123456"
+}
+
+ 2. Login de Usuário
+POST http://localhost:3000/users/login
+Body (JSON):
+
+json
+
+{
+  "email": "joao@email.com",
+  "password": "123456"
+}
+Resposta:
+
+json
+
+{
+  "message": "Login bem-sucedido",
+  "token": "<JWT_TOKEN>"
+}
+
+ 3. Listar usuários (com token: chavetesteparaprojeto)
+GET http://localhost:3000/users
+Header:
+
+makefile
+
+Authorization: Bearer <chavetesteparaprojeto>
+
+ 4. Atualizar usuário
+PUT http://localhost:3000/users/1
+Header:
+
+makefile
+
+Authorization: Bearer <chavetesteparaprojeto>
+Body:
+
+json
+CopiarEditar
+{
+  "name": "João Atualizado",
+  "email": "joao@email.com"
+}
